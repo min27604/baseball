@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
-
 import './App.css';
 import PlayScreen from './routes/PlayScreen';
 import StartScreen from './routes/StartScreen';
 import theme from './theme';
+import { playable, PlayableContext } from './components/provider/Context';
 
 function App() {
   const GlobalStyle = createGlobalStyle`
@@ -27,19 +27,21 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Switch>
-          <AppDiv>
-            <Route path='/' exact>
-              <StartScreen />
-            </Route>
-            <Route path='/play-screen'>
-              <PlayScreen />
-            </Route>
-          </AppDiv>
-        </Switch>
-      </BrowserRouter>
+      <PlayableContext.Provider value={playable}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <Switch>
+            <AppDiv>
+              <Route path='/' exact>
+                <StartScreen />
+              </Route>
+              <Route path='/play-screen'>
+                <PlayScreen />
+              </Route>
+            </AppDiv>
+          </Switch>
+        </BrowserRouter>
+      </PlayableContext.Provider>
     </ThemeProvider>
   );
 }
