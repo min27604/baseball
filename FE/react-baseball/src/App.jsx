@@ -5,7 +5,8 @@ import './App.css';
 import PlayScreen from './routes/PlayScreen';
 import StartScreen from './routes/StartScreen';
 import theme from './theme';
-import { playable, PlayableContext } from './components/provider/Context';
+import { useState } from 'react';
+import { createContext } from 'react';
 
 function App() {
   const GlobalStyle = createGlobalStyle`
@@ -25,9 +26,11 @@ function App() {
   }
 `;
 
+  const [playable, setPlayable] = useState(true);
+
   return (
     <ThemeProvider theme={theme}>
-      <PlayableContext.Provider value={playable}>
+      <PlayableContext.Provider value={{ playable, setPlayable }}>
         <GlobalStyle />
         <BrowserRouter>
           <Switch>
@@ -50,5 +53,7 @@ const AppDiv = styled.div`
   margin: 50px auto;
   max-width: 1440px;
 `;
+
+export const PlayableContext = createContext();
 
 export default App;
