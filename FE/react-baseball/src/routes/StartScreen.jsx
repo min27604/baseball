@@ -1,12 +1,9 @@
-
-
 import { createContext } from 'react';
 
-import Caption from '../components/Caption';
+import Caption from '../components/startScreen/Caption';
 import GameList from '../components/GameList';
-import Title from '../components/Title';
+import Title from '../components/startScreen/Title';
 import styled from 'styled-components';
-
 
 const playable = {
   // 임시 데이터
@@ -29,7 +26,6 @@ const StartScreen = (props) => {
     </PlayableContext.Provider>
   );
 };
-
 
 const StartDiv = styled.div`
   margin: 0 auto;

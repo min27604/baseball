@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useContext } from 'react';
-import { PlayableContext } from '../routes/StartScreen';
+import { PlayableContext } from '../../routes/StartScreen';
 
 const Caption = (props) => {
   const playable = useContext(PlayableContext);
