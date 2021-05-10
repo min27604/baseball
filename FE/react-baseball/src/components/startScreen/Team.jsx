@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import { useContext } from 'react';
-import { PlayableContext } from '../routes/StartScreen';
+import { PlayableContext } from '../../routes/StartScreen';
 
 const Team = ({ type, game }) => {
   const playable = useContext(PlayableContext);

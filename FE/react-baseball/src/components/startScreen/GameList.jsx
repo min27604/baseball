@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import games from '../mockData';
+import games from '../../mockData';
 import Game from './Game';
 
 const GameList = (props) => {

@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 import Caption from '../components/startScreen/Caption';
-import GameList from '../components/GameList';
+import GameList from '../components/startScreen/GameList';
 import Title from '../components/startScreen/Title';
 import styled from 'styled-components';
 
